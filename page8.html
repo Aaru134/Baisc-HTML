@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-group">
+        <label for="input" class="col-sm-2 control-label">Emp Id:</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            name=""
+            id="txtid"
+            class="form-control"
+            value=""
+            required="required"
+            pattern=""
+            title=""
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="input" class="col-sm-2 control-label">Emp Name:</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            name=""
+            id="txtname"
+            class="form-control"
+            value=""
+            required="required"
+            pattern=""
+            title=""
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="input" class="col-sm-2 control-label">Emp Sal:</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            name=""
+            id="txtsal"
+            class="form-control"
+            value=""
+            required="required"
+            pattern=""
+            title=""
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="input" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+          <button type="button" class="btn btn-primary" onclick="addrecord()">
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Emp Id</th>
+            <th>Emp Name</th>
+            <th>Emp Salary</th>
+          </tr>
+        </thead>
+        <tbody id="tbldata"></tbody>
+      </table>
+    </div>
+
+    <script>
+      class Emp {
+        setValues(id, name, sal) {
+          this.id = id;
+          this.name = name;
+          this.sal = sal;
+        }
+
+        show() {
+          var data = document.getElementById("tbldata").innerHTML;
+
+          data +=
+            "<tr><td>" +
+            this.id +
+            "</td><td>" +
+            this.name +
+            "</td><td>" +
+            this.sal +
+            "</td></tr>";
+
+          document.getElementById("tbldata").innerHTML = data;
+        }
+      }
+
+      function addrecord() {
+        id = document.getElementById("txtid").value;
+        name = document.getElementById("txtname").value;
+        sal = document.getElementById("txtsal").value;
+
+        e1 = new Emp();
+        e1.setValues(id, name, sal);
+        e1.show();
+      }
+    </script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

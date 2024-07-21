@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: absolute;
+      }
+      #d1 {
+        overflow: hidden;
+        width: 100px;
+        padding: 10px;
+        background-color: teal;
+        animation: a1 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      #d2 {
+        overflow: hidden;
+        width: 100px;
+        padding: 10px;
+        background-color: teal;
+        animation: a1 5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+      }
+
+      @keyframes a1 {
+        0% {
+          background-color: teal;
+          left: 0px;
+          border-radius: 0px;
+        }
+        50% {
+          background-color: #fa0;
+          left: 40%;
+          border-radius: 360px;
+          transform: rotate(36000deg);
+        }
+        100% {
+          background-color: teal;
+          left: 90%;
+          border-radius: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1">
+      <h1>Welcome Student</h1>
+    </div>
+    <div id="d2">
+      <h1>Welcome Student</h1>
+    </div>
+  </body>
+</html>
